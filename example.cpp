@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iconvlite.h>
 using namespace std;
+using namespace iconvlite;
 int main()
 {
 string utf = cp2utf("some text in cp1251");

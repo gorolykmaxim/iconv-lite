@@ -7,16 +7,17 @@ Simple cpp functions to convert strings from cp1251 to utf8 and ftom utf8 to cp1
 #ifndef ICONVLITE_H
 #define ICONVLITE_H
 
-using namespace std;
+#include <string>
 
+namespace iconvlite {
 static void cp2utf1(char *out, const char *in);
-string cp2utf(string s);
-int convert_utf8_to_windows1251(const char* utf8, char* windows1251, size_t n);
-string utf2cp(string s);
+std::string cp2utf(std::string s);
+int convert_utf8_to_windows1251(const char *utf8, char *windows1251, size_t n);
+std::string utf2cp(std::string s);
 
 typedef struct ConvLetter {
-        char    win1251;
-        int             unicode;
+    char win1251;
+    int unicode;
 } Letter;
 
 static Letter g_letters[] = {
@@ -82,5 +83,5 @@ static Letter g_letters[] = {
         {0xBE, 0x0455}, // CYRILLIC SMALL LETTER DZE
         {0xBF, 0x0457} // CYRILLIC SMALL LETTER YI
 };
-
+}
 #endif
