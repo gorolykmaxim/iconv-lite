@@ -4,5 +4,5 @@ project(iconvlite)
 add_library(${PROJECT_NAME} STATIC iconvlite.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC .)
 
-add_executable(example example.cpp)
-target_link_libraries(example ${PROJECT_NAME})
+add_executable(${PROJECT_NAME}-example example.cpp)
+target_link_libraries(${PROJECT_NAME}-example ${PROJECT_NAME})
